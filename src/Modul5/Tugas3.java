@@ -1,22 +1,20 @@
 package Modul5;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Tugas3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Size : ");
-        int size = Integer.parseInt(input.nextLine());
+        int[] res = new int[Integer.parseInt(input.nextLine())];
 
         System.out.print("Input Data : ");
-        String data;
-        data = input.nextLine();
-        String[] splitArr = data.split(" ");
+        String[] splitArr = input.nextLine().split(" ");
 
         float positif = 0, zero = 0, negatif = 0;
-        int[] res = new int[size];
-        System.out.println("Result :");
+        System.out.print("Sort : ");
         for (int i = 0; i < splitArr.length; i++) {
             res[i] = Integer.parseInt(splitArr[i]);
             if (res[i] < 0){
@@ -30,10 +28,9 @@ public class Tugas3 {
 
         Arrays.sort(res);
         System.out.println(Arrays.toString(res));
-
-        System.out.printf("Positif  : %.2f\n", positif/size);
-        System.out.printf("Zero     : %.2f\n", zero/size);
-        System.out.printf("Negatif  : %.2f\n", negatif/size);
+        System.out.printf("Positif  : %.2f\n", positif/res.length);
+        System.out.printf("Zero     : %.2f\n", zero/res.length);
+        System.out.printf("Negatif  : %.2f\n", negatif/res.length);
 
     }
 }
